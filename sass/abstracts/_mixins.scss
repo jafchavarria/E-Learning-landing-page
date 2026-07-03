@@ -1,0 +1,157 @@
+@use "variables" as *;
+
+@mixin breakpoint($bp) {
+  @if $bp == mobile {
+    @media (min-width: $bp-mobile) {
+      @content;
+    }
+  }
+
+  @if $bp == tablet {
+    @media (min-width: $bp-tablet) {
+      @content;
+    }
+  }
+
+  @if $bp == desktop {
+    @media (min-width: $bp-desktop) {
+      @content;
+    }
+  }
+}
+
+@mixin reset-list() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin reset-link() {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin button-header($padding, $radius) {
+  color: $white;
+  background-color: $dark;
+  padding: $padding;
+  border-radius: $radius;
+
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: $blue;
+  }
+}
+
+@mixin background-color-body() {
+  background: $background;
+}
+
+@mixin h1($size) {
+  font-weight: 800;
+  font-size: $size;
+  color: $dark;
+  line-height: 100%;
+}
+
+@mixin paragraph($weight, $size, $line) {
+  font-weight: $weight;
+  font-size: $size;
+  color: $gray;
+  line-height: $line;
+}
+
+@mixin button-body($padding, $radius, $margin) {
+  color: $white;
+  background: $gradient-orange;
+  padding: $padding;
+  border-radius: $radius;
+  display: inline-block;
+  margin-top: $margin;
+
+  transition: background-color 0.3s ease;
+  &:hover {
+    background: $gradient-orange-press;
+  }
+}
+
+@mixin box() {
+  border-radius: 24px;
+  background-color: $white;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+@mixin box-position($left) {
+  position: absolute;
+  left: $left;
+  top: 0;
+}
+
+@mixin members-hours-1() {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 28px;
+  color: $gray;
+}
+
+@mixin members-hours-2() {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 100%;
+  color: $dark;
+}
+
+@mixin box-articles() {
+  border-radius: 10px;
+  background-color: $white;
+  padding: 32px;
+}
+
+@mixin color-box($fs, $lh, $pl, $pt) {
+  height: 100%;
+  background: $gradient-orange;
+  color: $white;
+  font-weight: 800;
+  font-size: $fs;
+  line-height: $lh;
+  padding-left: $pl;
+  padding-top: $pt;
+}
+
+@mixin title-art($fs) {
+  font-weight: 800;
+  font-size: $fs;
+  line-height: 100%;
+  color: $dark;
+}
+
+@mixin paragraph-art($fs) {
+  font-weight: 800;
+  font-size: $fs;
+  line-height: 26px;
+  color: $gray;
+}
+
+@mixin link-art() {
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 26px;
+  color: $fuchsia;
+
+  transition: background-color 0.3s ease;
+  &:hover {
+    color: $pink;
+  }
+}
+
+@mixin button-footer($padding, $radius) {
+  color: $white;
+  background: $gradient-purple;
+  padding: $padding;
+  border-radius: $radius;
+
+  transition: background-color 0.3s ease;
+  &:hover {
+    background: $gradient-purple-press;
+  }
+}

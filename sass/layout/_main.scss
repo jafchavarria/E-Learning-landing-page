@@ -1,0 +1,216 @@
+@use "../abstracts/mixins";
+
+main {
+  padding: 0 16px 140px 16px;
+  @include mixins.background-color-body();
+
+  & h1 {
+    @include mixins.breakpoint(mobile) {
+      @include mixins.h1(40px);
+      width: 343px;
+    }
+    @include mixins.breakpoint(tablt) {
+      @include mixins.h1(40px);
+      width: 398px;
+    }
+    @include mixins.breakpoint(desktop) {
+      @include mixins.h1(56px);
+      width: 457px;
+    }
+  }
+
+  & .intro {
+    @include mixins.breakpoint(mobile) {
+      display: flex;
+      flex-direction: column;
+    }
+    @include mixins.breakpoint(tablet) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 125px;
+    }
+    @include mixins.breakpoint(desktop) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 150px;
+    }
+  }
+
+  & .intro p {
+    @include mixins.breakpoint(mobile) {
+      @include mixins.paragraph(500, 16px, 26px);
+      width: 343px;
+    }
+    @include mixins.breakpoint(tablet) {
+      @include mixins.paragraph(400, 16px, 26px);
+      width: 398px;
+    }
+    @include mixins.breakpoint(desktop) {
+      @include mixins.paragraph(400, 18px, 28px);
+      width: 457px;
+    }
+  }
+
+  & .button_body {
+    @include mixins.breakpoint(mobile) {
+      @include mixins.button-body(15px 38px 15px 38px, 28px, 39px);
+    }
+    @include mixins.breakpoint(tablet) {
+      @include mixins.button-body(15px 38px 15px 38px, 28px, 39px);
+    }
+    @include mixins.breakpoint(desktop) {
+      @include mixins.button-body(16px 32px 16px 32px, 32px, 59px);
+    }
+  }
+
+  & .intro > :nth-child(2) {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    margin-top: 46px;
+  }
+
+  & .image1 {
+    display: block;
+    @include mixins.breakpoint(tablet) {
+      display: none;
+    }
+  }
+
+  & .image2 {
+    display: none;
+    @include mixins.breakpoint(tablet) {
+      display: block;
+    }
+  }
+
+  & .hours {
+    width: 155px;
+    height: fit-content;
+    padding: 10px;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    @include mixins.box();
+    & > first-child {
+      @include mixins.members-hours-1();
+    }
+    & > :nth-child(2) {
+      @include mixins.members-hours-2();
+    }
+  }
+
+  & .members {
+    width: 155px;
+    height: fit-content;
+    padding: 10px;
+
+    @include mixins.breakpoint(mobile) {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    @include mixins.breakpoint(tablet) {
+      @include mixins.box-position(300px);
+    }
+    @include mixins.breakpoint(desktop) {
+      @include mixins.box-position(300px);
+    }
+
+    @include mixins.box();
+    & > first-child {
+      @include mixins.members-hours-1();
+    }
+    & > :nth-child(2) {
+      @include mixins.members-hours-2();
+    }
+  }
+
+  & .articles {
+    display: grid;
+    @include mixins.breakpoint(mobile) {
+      margin-top: 50px;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(6, 1fr);
+      row-gap: 48px;
+    }
+    @include mixins.breakpoint(tablet) {
+      margin-top: 150px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      row-gap: 56px;
+      column-gap: 12px;
+    }
+    @include mixins.breakpoint(desktop) {
+      margin-top: 150px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 80px;
+      column-gap: 30px;
+    }
+
+    & > div {
+      position: relative;
+      @include mixins.box-articles();
+    }
+
+    & > :first-child {
+      @include mixins.breakpoint(mobile) {
+        @include mixins.color-box(24px, 32px, 28px, 32px);
+      }
+      @include mixins.breakpoint(tablet) {
+        @include mixins.color-box(24px, 32px, 32px, 56px);
+      }
+      @include mixins.breakpoint(desktop) {
+        @include mixins.color-box(32px, 40px, 32px, 64px);
+      }
+    }
+
+    & .icon {
+      position: absolute;
+      top: -28px;
+    }
+
+    & h2 {
+      @include mixins.breakpoint(mobile) {
+        @include mixins.title-art(20px);
+      }
+      @include mixins.breakpoint(tablet) {
+        @include mixins.title-art(20px);
+      }
+      @include mixins.breakpoint(desktop) {
+        @include mixins.title-art(24px);
+      }
+    }
+
+    & .p {
+      @include mixins.breakpoint(mobile) {
+        @include mixins.paragraph-art(16px);
+      }
+      @include mixins.breakpoint(tablet) {
+        @include mixins.paragraph-art(16px);
+      }
+      @include mixins.breakpoint(desktop) {
+        @include mixins.paragraph-art(18px);
+      }
+    }
+
+    & .get {
+      @include mixins.breakpoint(mobile) {
+        @include mixins.link-art();
+      }
+      @include mixins.breakpoint(tablet) {
+        @include mixins.link-art();
+      }
+      @include mixins.breakpoint(desktop) {
+        @include mixins.link-art();
+      }
+    }
+  }
+}

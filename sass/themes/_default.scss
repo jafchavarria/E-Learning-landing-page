@@ -1,0 +1,9 @@
+@use "../abstracts" as abstracts;
+
+html * {
+  font-family: abstracts.$font1;
+}
+
+body {
+  overflow-x: hidden;
+}

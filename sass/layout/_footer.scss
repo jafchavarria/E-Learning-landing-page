@@ -1,0 +1,44 @@
+@use "../abstracts/mixins";
+
+footer {
+  padding: 0 16px 0 16px;
+  display: flex;
+  justify-content: space-between;
+  height: 48px;
+  align-items: center;
+  background-color: #13183f;
+  height: 120px;
+
+  & > :first-child {
+    color: white;
+
+    @include mixins.breakpoint(mobile) {
+      font-weight: 800;
+      font-size: 28px;
+    }
+    @include mixins.breakpoint(tablet) {
+      font-weight: 800;
+      font-size: 28px;
+    }
+    @include mixins.breakpoint(desktop) {
+      font-weight: 800;
+      font-size: 36px;
+    }
+  }
+
+  & > :nth-child(2) {
+    @include mixins.breakpoint(mobile) {
+      @include mixins.button-footer(9px 24px 11px 24px, 24px);
+    }
+    @include mixins.breakpoint(tablet) {
+      @include mixins.button-footer(9px 24px 11px 24px, 24px);
+    }
+    @include mixins.breakpoint(desktop) {
+      @include mixins.button-footer(14px 32px 14px 32px, 28px);
+    }
+  }
+}
+
+a {
+  @include mixins.reset-link();
+}
